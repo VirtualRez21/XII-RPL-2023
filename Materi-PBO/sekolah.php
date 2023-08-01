@@ -15,13 +15,31 @@ class Sekolah{
 		$this->agama = $agama;
 	}
 
-	public function lihatData($jenisObjek, $jenisProperty, $isiProperty){
+	public function lihatData($jenisObjek){
 		echo "Nama $jenisObjek: ".$this->nama."<br>";
 		echo "Tempat Lahir: ".$this->tempatLahir."<br>";
 		echo "Tanggal Lahir: ".$this->tanggalLahir."<br>";
 		echo "Jenis Kelamin: ".$this->jenisKelamin."<br>";
 		echo "Agama: ".$this->agama."<br>";
-		echo "$jenisProperty: ".$isiProperty;
+		// echo "$jenisProperty: ".$isiProperty;
+	}
+}
+
+class Guru extends Sekolah{
+	public $mapel = "nama mapel";
+
+	public function lihatDataGuru(){
+		$this->lihatData("Guru");
+		echo "Mapel: ".$this->mapel."<br>";
+	}
+}
+
+class Siswa extends Sekolah{
+	public $kelas = "nama kelas";
+
+	public function lihatDataSiswa(){
+		$this->lihatData("Siswa");
+		echo "Kelas: ".$this->kelas."<br>";
 	}
 }
 
@@ -67,13 +85,23 @@ echo "<br><br>";
 // echo "Kelas: ".$siswa->kelas;
 
 echo "<br><br>";
-$guru->lihatData("Guru", "Mapel", $guru->mapel);
+$guru->lihatData("Guru");
 echo "<br><br>";
-$siswa->lihatData("Siswa", "Kelas", $siswa->kelas);
+$siswa->lihatData("Siswa");
 
 echo "<br><br>";
-$guru2->lihatData("Guru", "Mapel", $guru2->mapel);
+$guru2->lihatData("Guru");
 echo "<br><br>";
-$siswa2->lihatData("Siswa", "Kelas", $siswa2->kelas);
+$siswa2->lihatData("Siswa");
+
+$guru3 = new Guru("Uyiz", "Tenggarong", "21-Juni-2023", "Laki-Laki", "Islam");
+$guru3->mapel = "Web";
+// $guru3->lihatData("Guru");
+$guru3->lihatDataGuru();
+
+$siswa3 = new Siswa("Uyiz", "Tenggarong", "21-Juni-2023", "Laki-Laki", "Islam");
+$siswa3->kelas = "XII RPL";
+// $guru3->lihatData("Guru");
+$siswa3->lihatDataSiswa();
 
 ?>
