@@ -256,3 +256,22 @@
 	}
 	
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BELAJAR PEMROGRAMAN WEB</title>
+</head>
+<body>
+	<form action="index.php" method="POST">
+		<label>Username</label>
+		<input type="text" name="username" required>
+		<br><br>
+		<label>Password</label>
+		<input type="password" name="password" required>
+		<br><br><br>
+		<input type="submit" name="submit">
+	</form>
+
+</body>
+</html>
