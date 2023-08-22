@@ -257,10 +257,19 @@
 	
 ?>
 
+<?php
+require 'fungsiWelcome.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>BELAJAR PEMROGRAMAN WEB</title>
+	<script type="text/javascript">
+		<?php
+		hello();
+		?>
+	</script>
 </head>
 <body>
 	<form action="index.php" method="POST">
